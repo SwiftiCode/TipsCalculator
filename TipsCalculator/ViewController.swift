@@ -15,7 +15,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tipSegmentControl: UISegmentedControl!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
-    @IBOutlet weak var tipButton: UIButton!
     
     var inputBill: Double = 0.0
     
@@ -26,17 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         tipTextField.delegate = self
         
-        //tipTextField.layer.borderWidth = 2
-        tipButton.layer.borderWidth = 1
-        
-        tipTextField.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        tipTextField.sizeToFit()
-        
-        tipAmountLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        tipAmountLabel.sizeToFit()
-        
-        tipLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-        tipLabel.sizeToFit()
+    
         
     }
 
@@ -46,13 +35,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         
         inputBill = Double(textField.text!) ?? 0
+        reCalculateTips(tipSegmentControl)
         
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
         return true
@@ -60,7 +50,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: IBAction
-    @IBAction func calculateTip(sender: UIButton) {
+    
+    @IBAction func reCalculateTips(_ sender: UISegmentedControl) {
         
         var tipRate: Double
         
@@ -71,11 +62,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         switch rateIndex {
             
-            case 0: tipRate = 0.10
-            case 1: tipRate = 0.15
-            case 2: tipRate = 0.20
-            case 3: tipRate = 0.25
-            default: tipRate = 0.00
+        case 0: tipRate = 0.10
+        case 1: tipRate = 0.15
+        case 2: tipRate = 0.20
+        case 3: tipRate = 0.25
+        default: tipRate = 0.00
             
         }
         
@@ -84,10 +75,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         tipAmountLabel.text = String(format: "Tip Amount = $%.2f", tipAmt)
         tipLabel.text = String(format:"Bill and Tip Total = $%.2f",tipAndBill)
-        
+
     }
     
-
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
+        
+        tipTextField.resignFirstResponder()
+        
+    }
 
 }
 

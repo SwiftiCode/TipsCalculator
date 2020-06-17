@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,72 +16,87 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-Vs-mYy">
-                                <rect key="frame" x="20" y="70" width="560" height="254"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-JT-JZh">
+                                <rect key="frame" x="20" y="50" width="374" height="686"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill Here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uXd-6b-xuF">
-                                        <rect key="frame" x="50" y="0.0" width="460" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="28" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PLz-1R-MOl">
-                                        <rect key="frame" x="50" y="60" width="460" height="29"/>
-                                        <segments>
-                                            <segment title="10%"/>
-                                            <segment title="15%"/>
-                                            <segment title="20%"/>
-                                            <segment title="25%"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU7-Tt-QFe">
-                                        <rect key="frame" x="80" y="118" width="400" height="34"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                                        <state key="normal" title="  Calculate Tip  "/>
-                                        <connections>
-                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TXP-Bn-049"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount = $0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-WR-eYR">
-                                        <rect key="frame" x="204" y="182" width="153" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total = $0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYd-bb-JyY">
-                                        <rect key="frame" x="229" y="233" width="102" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="H0s-Vs-mYy">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="301.66666666666669"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Bill Here" textAlignment="center" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uXd-6b-xuF">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="69"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="28" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PLz-1R-MOl">
+                                                <rect key="frame" x="37" y="99" width="300" height="29"/>
+                                                <segments>
+                                                    <segment title="10%"/>
+                                                    <segment title="15%"/>
+                                                    <segment title="20%"/>
+                                                    <segment title="25%"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="reCalculateTips:" destination="BYZ-38-t0r" eventType="valueChanged" id="5Ji-le-AqO"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount = $0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-WR-eYR">
+                                                <rect key="frame" x="0.0" y="157" width="374" height="57.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total = $0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYd-bb-JyY">
+                                                <rect key="frame" x="38.666666666666657" y="244.33333333333334" width="297" height="57.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uXd-6b-xuF" firstAttribute="leading" secondItem="H0s-Vs-mYy" secondAttribute="leading" id="AqC-0B-puT"/>
+                                            <constraint firstAttribute="trailing" secondItem="uXd-6b-xuF" secondAttribute="trailing" id="H5k-lk-cTG"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="aU7-Tt-QFe" firstAttribute="leading" secondItem="H0s-Vs-mYy" secondAttribute="leading" constant="80" id="BBQ-ht-meL"/>
-                                    <constraint firstItem="uXd-6b-xuF" firstAttribute="leading" secondItem="H0s-Vs-mYy" secondAttribute="leading" constant="50" id="IqZ-Pf-FGl"/>
-                                    <constraint firstItem="PLz-1R-MOl" firstAttribute="leading" secondItem="uXd-6b-xuF" secondAttribute="leading" id="dRE-qy-dBe"/>
+                                    <constraint firstItem="H0s-Vs-mYy" firstAttribute="leading" secondItem="O9y-JT-JZh" secondAttribute="leading" id="Dwj-C7-FNz"/>
+                                    <constraint firstItem="H0s-Vs-mYy" firstAttribute="width" secondItem="O9y-JT-JZh" secondAttribute="width" id="Eod-Fe-ZQP"/>
+                                    <constraint firstAttribute="bottom" secondItem="H0s-Vs-mYy" secondAttribute="bottom" id="LNL-in-U28"/>
+                                    <constraint firstAttribute="trailing" secondItem="H0s-Vs-mYy" secondAttribute="trailing" id="ZB5-E6-opx"/>
+                                    <constraint firstItem="H0s-Vs-mYy" firstAttribute="top" secondItem="O9y-JT-JZh" secondAttribute="top" id="ust-gc-OxL"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="H0s-Vs-mYy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="IqG-vM-o6V"/>
-                            <constraint firstItem="H0s-Vs-mYy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cgd-Mf-lAU"/>
-                            <constraint firstItem="H0s-Vs-mYy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hUV-vt-wxu"/>
+                            <constraint firstItem="O9y-JT-JZh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="09c-L6-Xi4"/>
+                            <constraint firstItem="O9y-JT-JZh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="cDW-BP-dKi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O9y-JT-JZh" secondAttribute="bottom" id="g1i-Ru-WXY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O9y-JT-JZh" secondAttribute="trailing" id="ju1-9a-8R3"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YVp-lZ-dat" appends="YES" id="7A8-bN-tya"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="tipAmountLabel" destination="vRB-WR-eYR" id="bRt-0f-f3Z"/>
-                        <outlet property="tipButton" destination="aU7-Tt-QFe" id="jUy-QB-40x"/>
                         <outlet property="tipLabel" destination="PYd-bb-JyY" id="7LE-ps-W2u"/>
                         <outlet property="tipSegmentControl" destination="PLz-1R-MOl" id="QNh-Js-cva"/>
                         <outlet property="tipTextField" destination="uXd-6b-xuF" id="AEt-5D-s2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YVp-lZ-dat">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="eKy-TA-T0V"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="135" y="134"/>
         </scene>
     </scenes>
 </document>
